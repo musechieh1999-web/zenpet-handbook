@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>感謝你的填寫｜ZEN PET 飼主必備手冊</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Montserrat', '台北黑體', 'Noto Sans TC', sans-serif;
+      background-color: #FFF6EA;
+      color: #2C2C2C;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    .header {
+      background-color: #396262;
+      padding: 24px 20px;
+      text-align: center;
+    }
+    .header .logo {
+      color: #FFF6EA;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 28px;
+      letter-spacing: 4px;
+    }
+
+    /* Hero */
+    .hero {
+      background-color: #FFF6EA;
+      text-align: center;
+      padding: 48px 24px 32px;
+    }
+    .hero .tag {
+      display: inline-block;
+      background-color: #E7AD87;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 4px 16px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 6vw, 42px);
+      font-weight: 700;
+      color: #396262;
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+    .hero h1 span.highlight {
+      position: relative;
+      display: inline-block;
+    }
+    .hero h1 span.highlight::after {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background-color: #E7AD87;
+      opacity: 0.5;
+      border-radius: 4px;
+      z-index: -1;
+    }
+    .hero p {
+      font-size: 15px;
+      color: #2C2C2C;
+      opacity: 0.8;
+      margin-bottom: 8px;
+    }
+    .hero .authors {
+      font-size: 14px;
+      color: #396262;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    /* Divider */
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 24px;
+      color: #A7D4D4;
+      font-size: 20px;
+      letter-spacing: 8px;
+    }
+
+    /* Download Section */
+    .download-section {
+      background-color: #A7D4D4;
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .download-section h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #396262;
+      margin-bottom: 8px;
+    }
+    .download-section p {
+      font-size: 14px;
+      color: #396262;
+      margin-bottom: 28px;
+      opacity: 0.85;
+    }
+    .download-btn {
+      display: inline-block;
+      background-color: #396262;
+      color: #FFF6EA;
+      font-size: 17px;
+      font-weight: 700;
+      padding: 16px 48px;
+      border-radius: 50px;
+      text-decoration: none;
+      letter-spacing: 1px;
+      transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 4px 16px rgba(57,98,98,0.25);
+    }
+    .download-btn:hover {
+      background-color: #2a4d4d;
+      transform: translateY(-2px);
+    }
+    .download-btn:active {
+      transform: translateY(0);
+    }
+    .download-note {
+      margin-top: 14px;
+      font-size: 12px;
+      color: #396262;
+      opacity: 0.7;
+    }
+
+    /* Newsletter Section */
+    .newsletter-section {
+      background-color: #FFF6EA;
+      padding: 40px 24px;
+      text-align: center;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .newsletter-section h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #396262;
+      margin-bottom: 8px;
+    }
+    .newsletter-section p {
+      font-size: 14px;
+      color: #2C2C2C;
+      opacity: 0.8;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+    .newsletter-btn {
+      display: inline-block;
+      background-color: #E7AD87;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 4px 12px rgba(231,173,135,0.35);
+    }
+    .newsletter-btn:hover {
+      background-color: #d9955e;
+      transform: translateY(-2px);
+    }
+
+    /* Social Section */
+    .social-section {
+      background-color: #396262;
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .social-section h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #FFF6EA;
+      margin-bottom: 6px;
+    }
+    .social-section p {
+      font-size: 13px;
+      color: #A7D4D4;
+      margin-bottom: 28px;
+    }
+    .social-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .social-card {
+      background-color: rgba(255,246,234,0.1);
+      border: 1.5px solid rgba(167,212,212,0.4);
+      border-radius: 16px;
+      padding: 16px 12px;
+      text-decoration: none;
+      color: #FFF6EA;
+      transition: background 0.2s, transform 0.1s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .social-card:hover {
+      background-color: rgba(255,246,234,0.18);
+      transform: translateY(-2px);
+    }
+    .social-card .icon {
+      font-size: 24px;
+    }
+    .social-card .platform {
+      font-size: 10px;
+      color: #A7D4D4;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .social-card .name {
+      font-size: 13px;
+      font-weight: 700;
+      color: #FFF6EA;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #396262;
+      border-top: 1px solid rgba(167,212,212,0.2);
+      padding: 20px 24px;
+      text-align: center;
+    }
+    .footer p {
+      font-size: 11px;
+      color: #A7D4D4;
+      line-height: 1.8;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">ZEN PET</div>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="tag">ZEN PET × 飼主必備手冊</div>
+    <h1>
+      <span class="highlight">看懂狗狗的</span><br>
+      求救訊號
+    </h1>
+    <p>14 大症狀面向 × 分級判斷指南</p>
+    <p class="authors">獸醫師 Emily　×　狗狗訓練師 羊桃</p>
+  </div>
+
+  <div class="divider">· · ·</div>
+
+  <!-- Download -->
+  <div class="download-section">
+    <h2>你的手冊已經準備好了 🎉</h2>
+    <p>點擊下方按鈕，立即下載你的專屬手冊</p>
+    <a href="https://drive.google.com/uc?export=download&id=1iC9HNz_2W3s0yaQjAwYOvTOLGEevbFET" class="download-btn" target="_blank">
+      ⬇ 立即下載手冊
+    </a>
+    <p class="download-note">PDF 格式，可儲存至手機或電腦隨時查閱</p>
+  </div>
+
+  <!-- Newsletter -->
+  <div class="newsletter-section">
+    <h2>📬 訂閱 Emily 獸醫師電子報</h2>
+    <p>每週收到來自診間的真實案例與寵物健康知識，<br>讓你在毛孩需要你的時候，不慌不忙。</p>
+    <a href="https://emilyntu.kit.com/newsletter" class="newsletter-btn" target="_blank">
+      立即訂閱電子報
+    </a>
+  </div>
+
+  <!-- Social -->
+  <div class="social-section">
+    <h2>繼續跟著我們學習</h2>
+    <p>從獸醫學與行為訓練兩個角度，陪你更了解你的狗</p>
+    <div class="social-grid">
+      <a href="https://www.instagram.com/emily_ntu/" class="social-card" target="_blank">
+        <span class="icon">📷</span>
+        <span class="platform">Instagram</span>
+        <span class="name">獸醫師 Emily</span>
+      </a>
+      <a href="https://www.instagram.com/sheepeach.dogtrainer/" class="social-card" target="_blank">
+        <span class="icon">📷</span>
+        <span class="platform">Instagram</span>
+        <span class="name">訓練師 羊桃</span>
+      </a>
+      <a href="https://www.instagram.com/zen_pet_tw/" class="social-card" target="_blank">
+        <span class="icon">🐾</span>
+        <span class="platform">Instagram</span>
+        <span class="name">ZEN PET</span>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61590030129308" class="social-card" target="_blank">
+        <span class="icon">👥</span>
+        <span class="platform">Facebook</span>
+        <span class="name">ZEN PET</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>
+      © 2026 ZEN PET　本手冊內容不取代獸醫師門診現場診斷<br>
+      ZEN PET 版權所有，未經授權請勿轉載
+    </p>
+  </div>
+
+</body>
+</html>
